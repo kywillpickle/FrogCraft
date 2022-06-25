@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "frogcraft:block/magenta_liminal_wall"
+  }
+}
