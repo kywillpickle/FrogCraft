@@ -26,6 +26,7 @@ import net.minecraftforge.registries.RegistryObject;
 import net.topnotchgames.frogcraft.common.blocks.LiminalBlock;
 import net.topnotchgames.frogcraft.init.BlockInit;
 import net.topnotchgames.frogcraft.init.ItemInit;
+import net.topnotchgames.frogcraft.init.SoundInit;
 
 import org.slf4j.Logger;
 
@@ -49,6 +50,8 @@ public class Frogcraft
         BlockInit.registerBlocks(modEventBus);
         // Register the Deferred Register to the mod event bus so items get registered
         ItemInit.registerItems(modEventBus);
+        // Register the Deferred Register to the mod event bus so sound events get registered
+        SoundInit.registerSounds(modEventBus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);

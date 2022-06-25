@@ -1,5 +1,11 @@
 {
-	"itemGroup.frogcraft": "FrogCraft",
+	"itemGroup.frogcraft": "Frogcraft",
+	
+	"item.frogcraft.frog_leg": "Frog Leg",
+	"item.frogcraft.cooked_frog_leg": "Cooked Frog Leg",
+	"item.frogcraft.music_disc_lone_lilypad": "Music Disc",
+	"item.frogcraft.music_disc_lone_lilypad.desc": "TBM - A Lone Lilypad",
+	"frogcraft.sound.subtitle.music_disc_lone_lilypad": "Music Disc",
 	
 	"item.frogcraft.light_fixture_block": "Light Fixture Block",
 	"item.frogcraft.black_liminal_carpet": "Black Liminal Carpet",

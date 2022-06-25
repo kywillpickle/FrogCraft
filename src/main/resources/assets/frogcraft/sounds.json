@@ -1,0 +1,10 @@
+{
+  "music_disc_lone_lilypad": {
+    "subtitle": "frogcraft.sound.subtitle.music_disc_lone_lilypad",
+    "sounds": [
+		{
+			"name": "frogcraft:music_disc_lone_lilypad"
+		}
+	]
+  }
+}
