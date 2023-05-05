@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "BBB",
+        "BDB",
+        "BBB"
+    ],
+    "key": {
+        "B": {
+            "tag": "frogcraft:liminal_blocks/liminal_tiles"
+        },
+        "D": {
+            "tag": "forge:dyes/purple"
+        }
+    },
+    "result": {
+        "count": 8,
+        "item": "frogcraft:purple_liminal_tiles"
+    }
+}

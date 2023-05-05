@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "BBB",
+        "BDB",
+        "BBB"
+    ],
+    "key": {
+        "B": {
+            "tag": "frogcraft:liminal_blocks/liminal_carpet"
+        },
+        "D": {
+            "tag": "forge:dyes/green"
+        }
+    },
+    "result": {
+        "count": 8,
+        "item": "frogcraft:green_liminal_carpet"
+    }
+}

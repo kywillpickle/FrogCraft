@@ -1,0 +1,21 @@
+{
+    "replace": false,
+    "values": [
+        "frogcraft:black_liminal_tiles",
+        "frogcraft:blue_liminal_tiles",
+        "frogcraft:brown_liminal_tiles",
+        "frogcraft:cyan_liminal_tiles",
+        "frogcraft:gray_liminal_tiles",
+        "frogcraft:green_liminal_tiles",
+        "frogcraft:light_blue_liminal_tiles",
+        "frogcraft:light_gray_liminal_tiles",
+        "frogcraft:lime_liminal_tiles",
+        "frogcraft:magenta_liminal_tiles",
+        "frogcraft:orange_liminal_tiles",
+        "frogcraft:pink_liminal_tiles",
+        "frogcraft:purple_liminal_tiles",
+        "frogcraft:red_liminal_tiles",
+        "frogcraft:white_liminal_tiles",
+        "frogcraft:yellow_liminal_tiles"
+    ]
+}

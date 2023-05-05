@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "BBB",
+        "BDB",
+        "BBB"
+    ],
+    "key": {
+        "B": {
+            "tag": "frogcraft:liminal_blocks/liminal_wall"
+        },
+        "D": {
+            "tag": "forge:dyes/magenta"
+        }
+    },
+    "result": {
+        "count": 8,
+        "item": "frogcraft:magenta_liminal_wall"
+    }
+}
