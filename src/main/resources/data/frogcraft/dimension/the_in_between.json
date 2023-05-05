@@ -1,0 +1,10 @@
+{
+  "type": "frogcraft:the_in_between",
+  "generator": {
+    "type": "minecraft:flat",
+    "settings": {
+      "biome": "minecraft:the_void",
+      "layers": []
+    }
+  }
+}

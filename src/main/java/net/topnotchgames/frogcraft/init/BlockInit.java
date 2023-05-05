@@ -15,10 +15,7 @@ public abstract class BlockInit {
 	/* Initialize the Deferred Block Register */
 	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Frogcraft.MODID);
 	/* Initialize all of the blocks */
-	public static final RegistryObject<Block> LIGHT_FIXTURE_BLOCK = BLOCKS.register("light_fixture_block", () -> new LightFixtureBlock(BlockBehaviour.Properties.of(Material.GLASS).lightLevel((level) -> {
-		return 16;
-	})));
-	
+	public static final RegistryObject<Block> LIGHT_FIXTURE_BLOCK = BLOCKS.register("light_fixture_block", () -> new LightFixtureBlock(BlockBehaviour.Properties.of(Material.GLASS).lightLevel(LightFixtureBlock.litBlockEmission()).randomTicks()));
 	//Liminal Walls
     public static final RegistryObject<Block> BLACK_LIMINAL_WALL = BLOCKS.register("black_liminal_wall", () -> new LiminalBlock(BlockBehaviour.Properties.of(Material.WOOD)));
     public static final RegistryObject<Block> RED_LIMINAL_WALL = BLOCKS.register("red_liminal_wall", () -> new LiminalBlock(BlockBehaviour.Properties.of(Material.WOOD)));

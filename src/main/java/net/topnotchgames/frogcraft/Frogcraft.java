@@ -2,30 +2,20 @@ package net.topnotchgames.frogcraft;
 
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.Minecraft;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.Material;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
-import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
-import net.topnotchgames.frogcraft.common.blocks.LiminalBlock;
+
 import net.topnotchgames.frogcraft.init.BlockInit;
 import net.topnotchgames.frogcraft.init.ItemInit;
+import net.topnotchgames.frogcraft.init.BlockEntityInit;
 import net.topnotchgames.frogcraft.init.SoundInit;
 
 import org.slf4j.Logger;
@@ -46,11 +36,13 @@ public class Frogcraft
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
-        // Register the Deferred Register to the mod event bus so blocks get registered
+        // Register deferred block register
         BlockInit.registerBlocks(modEventBus);
-        // Register the Deferred Register to the mod event bus so items get registered
+        // Register deferred item register
         ItemInit.registerItems(modEventBus);
-        // Register the Deferred Register to the mod event bus so sound events get registered
+        // Register deferred block entity register
+        BlockEntityInit.registerBlockEntities(modEventBus);
+        // Register deferred Sound register
         SoundInit.registerSounds(modEventBus);
 
         // Register ourselves for server and other game events we are interested in
