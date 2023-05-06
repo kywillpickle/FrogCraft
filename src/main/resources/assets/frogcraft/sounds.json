@@ -6,5 +6,13 @@
 			"name": "frogcraft:music_disc_lone_lilypad"
 		}
 	]
+  },
+  "light_fixture_block": {
+    "subtitle": "frogcraft.sound.subtitle.light_fixture_block",
+    "sounds": [
+		{
+			"name": "frogcraft:light_fixture_block"
+		}
+	]
   }
 }
