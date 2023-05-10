@@ -13,8 +13,14 @@ public abstract class SoundInit {
 	
 	public static final RegistryObject<SoundEvent> LONE_LILYPAD_DISK = SOUND_EVENTS.register("music_disc_lone_lilypad", () ->
 		new SoundEvent(new ResourceLocation(Frogcraft.MODID, "music_disc_lone_lilypad")));
+	
 	public static final RegistryObject<SoundEvent> LIGHT_FIXTURE_BLOCK = SOUND_EVENTS.register("light_fixture_block", () ->
 		new SoundEvent(new ResourceLocation(Frogcraft.MODID, "light_fixture_block")));
+	
+	public static final RegistryObject<SoundEvent> DESERT_FROG_CROAK_1 = SOUND_EVENTS.register("desert_frog_croak_1", () ->
+		new SoundEvent(new ResourceLocation(Frogcraft.MODID, "desert_frog_croak_1")));
+	public static final RegistryObject<SoundEvent> DESERT_FROG_CROAK_2 = SOUND_EVENTS.register("desert_frog_croak_2", () ->
+		new SoundEvent(new ResourceLocation(Frogcraft.MODID, "desert_frog_croak_2")));
 	
 	public static void registerSounds(IEventBus modEventBus) {
 		SOUND_EVENTS.register(modEventBus);

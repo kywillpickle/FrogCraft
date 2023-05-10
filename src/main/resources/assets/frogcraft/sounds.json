@@ -14,5 +14,21 @@
 			"name": "frogcraft:light_fixture_block"
 		}
 	]
+  },
+  "desert_frog_croak_1": {
+    "subtitle": "frogcraft.sound.subtitle.desert_frog_croak_1",
+    "sounds": [
+		{
+			"name": "frogcraft:desert_frog_croak_1"
+		}
+	]
+  },
+  "desert_frog_croak_2": {
+    "subtitle": "frogcraft.sound.subtitle.desert_frog_croak_2",
+    "sounds": [
+		{
+			"name": "frogcraft:desert_frog_croak_2"
+		}
+	]
   }
 }

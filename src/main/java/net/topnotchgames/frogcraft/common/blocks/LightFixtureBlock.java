@@ -51,7 +51,7 @@ public class LightFixtureBlock extends RotatedPillarBlock {
 		int y = pos.getY();
 		int z = pos.getZ();
 		boolean isfrog = false;
-		if(level.getEntitiesOfClass(Frog.class, (new AABB((double)x, (double)y, (double)z, (double)x, (double)(y - 2), (double)x)).inflate(2.0D, 3.0D, 2.0D)).size() > 0) {
+		if(level.getEntitiesOfClass(Frog.class, (new AABB((double)x, (double)(y - 2), (double)z, (double)x, (double)y, (double)z)).inflate(2.0D, 3.0D, 2.0D)).size() > 0) {
 			isfrog = true;
 		}
 		boolean isblinking = state.getValue(BLINKING);
