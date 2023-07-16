@@ -1,6 +1,5 @@
 package net.topnotchgames.frogcraft.common.entity.model;
 
-import net.minecraft.client.animation.definitions.FrogAnimation;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
@@ -72,11 +71,10 @@ public class DesertFrogModel extends HierarchicalModel<DesertFrogEntity> {
 	@Override
 	public void setupAnim(DesertFrogEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 		this.root.getAllParts().forEach(ModelPart::resetPose);
-	    float f = Math.min((float)entity.getDeltaMovement().lengthSqr() * 200.0F, 8.0F);
 	    this.animate(entity.jumpAnimationState, DesertFrogAnimation.MODEL_JUMP, ageInTicks);
 	    this.animate(entity.croakAnimationState, DesertFrogAnimation.MODEL_CROAK, ageInTicks);
 	    this.animate(entity.tongueAnimationState, DesertFrogAnimation.MODEL_TONGUE, ageInTicks);
-	    this.animate(entity.walkAnimationState, DesertFrogAnimation.MODEL_WALK, ageInTicks, f);
+	    this.animateWalk(DesertFrogAnimation.MODEL_WALK, limbSwing, limbSwingAmount, 1.5F, 2.5F);
 	}
 
 	@Override

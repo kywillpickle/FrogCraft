@@ -2,10 +2,10 @@ package net.topnotchgames.frogcraft.common.blocks;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.animal.frog.Frog;
+import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RotatedPillarBlock;
@@ -17,6 +17,8 @@ import net.minecraft.world.phys.AABB;
 import net.topnotchgames.frogcraft.init.SoundInit;
 
 import java.util.function.ToIntFunction;
+
+import javax.annotation.Nullable;
 
 public class LightFixtureBlock extends RotatedPillarBlock {
 	public static final int EMISSION_OFFSET = 6;
@@ -32,10 +34,15 @@ public class LightFixtureBlock extends RotatedPillarBlock {
 	
 	public static ToIntFunction<BlockState> litBlockEmission() {
 		return (state) -> {
-			if (state.getValue(BLINKING)) {return state.getValue(LIT) ? 11 : 5;}
-			else                          {return state.getValue(LIT) ? 16 : 0;}
+			if (state.getValue(BLINKING)) {return state.getValue(LIT) ? 10 : 5;}
+			else                          {return state.getValue(LIT) ? 15 : 0;}
 		};
 	}
+	
+	@Nullable
+	public BlockState getStateForPlacement(BlockPlaceContext ctx) {
+		return this.defaultBlockState().setValue(LIT, Boolean.valueOf(ctx.getLevel().hasNeighborSignal(ctx.getClickedPos())));
+    }
 	
 	public void neighborChanged(BlockState state, Level level, BlockPos thispos, Block block, BlockPos thatpos, boolean bool) {
 		if (!level.isClientSide) {

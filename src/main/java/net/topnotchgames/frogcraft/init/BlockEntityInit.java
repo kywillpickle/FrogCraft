@@ -10,11 +10,11 @@ import net.topnotchgames.frogcraft.common.blocks.entity.block.LightFixtureBlockE
 
 public class BlockEntityInit {
     /* Initialize the Deferred Block Register */
-    public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITIES, Frogcraft.MODID);
+    public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, Frogcraft.MODID);
     
-    public static final RegistryObject<BlockEntityType<LightFixtureBlockEntity>> LIGHT_FIXTURE_BLOCK_ENTITY = BlockEntityInit.BLOCK_ENTITIES.register("light_fixture_block_entity", () -> BlockEntityType.Builder.of(LightFixtureBlockEntity::new).build(null));
+    public static final RegistryObject<BlockEntityType<LightFixtureBlockEntity>> LIGHT_FIXTURE_BLOCK_ENTITY = BlockEntityInit.BLOCK_ENTITY_TYPES.register("light_fixture_block_entity", () -> BlockEntityType.Builder.of(LightFixtureBlockEntity::new).build(null));
 
     public static void registerBlockEntities(IEventBus modEventBus) {
-		BLOCK_ENTITIES.register(modEventBus);
+    	BLOCK_ENTITY_TYPES.register(modEventBus);
 	}
 }
