@@ -1,5 +1,9 @@
 package net.topnotchgames.frogcraft.common.blocks;
 
+import java.util.function.ToIntFunction;
+
+import javax.annotation.Nullable;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
@@ -15,10 +19,6 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.AABB;
 import net.topnotchgames.frogcraft.init.SoundInit;
-
-import java.util.function.ToIntFunction;
-
-import javax.annotation.Nullable;
 
 public class LightFixtureBlock extends RotatedPillarBlock {
 	public static final int EMISSION_OFFSET = 6;

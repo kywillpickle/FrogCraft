@@ -1,9 +1,9 @@
 package net.topnotchgames.frogcraft.init;
 
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.RecordItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.RecordItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -32,7 +32,7 @@ public abstract class ItemInit {
     public static final RegistryObject<Item> FROG_LEG = ITEMS.register("frog_leg", () -> new Item((new Item.Properties()).food((new FoodProperties.Builder()).nutrition(1).saturationMod(0.2F).effect(() -> (Math.random() >= 0.666 ? new MobEffectInstance(MobEffects.POISON, 200, 0) : new MobEffectInstance(MobEffects.HUNGER, 300, 1)), 0.6f).meat().build())));
 	public static final RegistryObject<Item> COOKED_FROG_LEG = ITEMS.register("cooked_frog_leg", () -> new Item((new Item.Properties()).food((new FoodProperties.Builder()).nutrition(5).saturationMod(0.5F).meat().build())));
 	public static final RegistryObject<Item> MUSIC_DISC_LONE_LILYPAD = ITEMS.register("music_disc_lone_lilypad", () ->
-		new RecordItem(0, SoundInit.LONE_LILYPAD_DISK, new Item.Properties().stacksTo(1).rarity(Rarity.RARE), 70*20));
+		new RecordItem(1, SoundInit.LONE_LILYPAD_DISK, (new Item.Properties()).stacksTo(1).rarity(Rarity.RARE), 1400));
 	
 	/* Initialize spawn eggs */
 	public static final RegistryObject<Item> DESERT_FROG_SPAWN_EGG = ITEMS.register("desert_frog_spawn_egg", () -> new ForgeSpawnEggItem(EntityInit.DESERT_FROG, 0x7b6046, 0xa99b8f, new Item.Properties()));
@@ -100,6 +100,7 @@ public abstract class ItemInit {
     		out.accept(item.get());
     	});
     }
+    
 	public static void registerItems(IEventBus modEventBus) {
 		ITEMS.register(modEventBus);
 		CREATIVE_TABS.register(modEventBus);

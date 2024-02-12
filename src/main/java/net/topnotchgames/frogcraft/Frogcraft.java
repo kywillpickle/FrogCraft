@@ -38,14 +38,14 @@ public class Frogcraft
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
         
-        // Register deferred Sound register
-        SoundInit.registerSounds(modEventBus);
         // Register deferred block register
         BlockInit.registerBlocks(modEventBus);
         // Register deferred item register
         ItemInit.registerItems(modEventBus);
         // Register deferred block entity register
         EntityInit.registerEntities(modEventBus);
+        // Register deferred Sound register
+        SoundInit.registerSounds(modEventBus);
 
         // Register ourselves for server and other game events we are interested in
         modEventBus.addListener((EntityAttributeCreationEvent event) -> EntityInit.registerEntityAttributes(event));
