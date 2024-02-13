@@ -1,0 +1,21 @@
+{
+    "replace": false,
+    "values": [
+        "frogcraft:black_liminal_wall",
+        "frogcraft:blue_liminal_wall",
+        "frogcraft:brown_liminal_wall",
+        "frogcraft:cyan_liminal_wall",
+        "frogcraft:gray_liminal_wall",
+        "frogcraft:green_liminal_wall",
+        "frogcraft:light_blue_liminal_wall",
+        "frogcraft:light_gray_liminal_wall",
+        "frogcraft:lime_liminal_wall",
+        "frogcraft:magenta_liminal_wall",
+        "frogcraft:orange_liminal_wall",
+        "frogcraft:pink_liminal_wall",
+        "frogcraft:purple_liminal_wall",
+        "frogcraft:red_liminal_wall",
+        "frogcraft:white_liminal_wall",
+        "frogcraft:yellow_liminal_wall"
+    ]
+}
