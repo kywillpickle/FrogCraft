@@ -33,7 +33,7 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider im
 		/* Base Liminal Block Recipies */
 		buildLiminalBlock(writer, ItemTags.PLANKS, Items.YELLOW_LIMINAL_WALL);
 		buildLiminalBlock(writer, ItemTags.WOOL, Items.YELLOW_LIMINAL_CARPET);
-		buildLiminalBlock(writer, ItemTags.STONE_BRICKS, Items.YELLOW_LIMINAL_TILES);
+		buildLiminalBlock(writer, net.minecraftforge.common.Tags.Items.STONE, Items.YELLOW_LIMINAL_TILES);
 		
 		/* Dyed Liminal Block Recipies */
 		buildDyedLiminalBlock(writer, Tags.Items.LIMINAL_WALL, Items.BLACK_LIMINAL_WALL);     
@@ -90,14 +90,31 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider im
 	
 	/* Recipe Helpers */
 	private void buildCooked(Consumer<FinishedRecipe> writer, RegistryObject<Item> item, RegistryObject<Item> product) {
-		SimpleCookingRecipeBuilder.smelting(Ingredient.of(item.get()), RecipeCategory.FOOD, product.get(), 0.1F, 100).unlockedBy(getHasName(Items.FROG_LEG.get()), has(Items.FROG_LEG.get()));
-		SimpleCookingRecipeBuilder.smelting(Ingredient.of(item.get()), RecipeCategory.FOOD, product.get(), 0.1F, 50).unlockedBy(getHasName(Items.FROG_LEG.get()), has(Items.FROG_LEG.get()));
+		SimpleCookingRecipeBuilder.smoking(Ingredient.of(item.get()), RecipeCategory.FOOD, product.get(), 0.1F, 50)
+				.unlockedBy(getHasName(Items.FROG_LEG.get()), has(Items.FROG_LEG.get()))
+			.save(writer);
 	}
 	private void buildLiminalBlock(Consumer<FinishedRecipe> writer, TagKey<Item> itemTag, RegistryObject<BlockItem> product) {
-		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, product.get(), 4).define('#', itemTag).define('L', Items.FROG_LEG.get()).pattern("###").pattern("#L#").pattern("###").group("liminal_block").unlockedBy(getHasName(Items.FROG_LEG.get()), has(Items.FROG_LEG.get())).save(writer, itemTag.location());
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, product.get(), 4)
+				.define('#', itemTag)
+				.define('L', Items.FROG_LEG.get())
+					.pattern("###")
+					.pattern("#L#")
+					.pattern("###")
+				.group(itemTag.location().getPath())
+				.unlockedBy(getHasName(Items.FROG_LEG.get()), has(Items.FROG_LEG.get()))
+			.save(writer, itemTag.location());
 	}
 	private void buildDyedLiminalBlock(Consumer<FinishedRecipe> writer, TagKey<Item> itemTag, RegistryObject<BlockItem> product) {
-		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, product.get(), 8).define('#', itemTag).define('D', ((LiminalBlock) product.get().getBlock()).COLOR.getTag()).pattern("###").pattern("#D#").pattern("###").group("liminal_block").unlockedBy(getHasName(Items.FROG_LEG.get()), has(Items.FROG_LEG.get())).save(writer);
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, product.get(), 8)
+				.define('#', itemTag)
+				.define('D', ((LiminalBlock) product.get().getBlock()).COLOR.getTag())
+					.pattern("###")
+					.pattern("#D#")
+					.pattern("###")
+				.group(itemTag.location().getPath())
+				.unlockedBy(getHasName(Items.FROG_LEG.get()), has(Items.FROG_LEG.get()))
+			.save(writer);
 	}
 
 }

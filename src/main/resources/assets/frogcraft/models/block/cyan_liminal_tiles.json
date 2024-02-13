@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "frogcraft:block/cyan_liminal_tiles"
-  }
-}

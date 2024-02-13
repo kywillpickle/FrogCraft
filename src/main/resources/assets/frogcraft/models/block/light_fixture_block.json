@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column",
-  "textures": {
-    "end": "frogcraft:block/light_fixture_block_top",
-    "side": "frogcraft:block/light_fixture_block"
-  }
-}

@@ -24,8 +24,8 @@ public class DataGenerators {
 		generator.addProvider(event.includeServer(), new RecipeProvider(packOutput));
 //		generator.addProvider(event.includeServer(), new FrogcraftLootTableProvider(packOutput));
 //		
-//		generator.addProvider(event.includeServer(), new FrogcraftBlockStateProvider(packOutput, existingFileHelper));
-//		generator.addProvider(event.includeServer(), new FrogcraftItemModelProvider(packOutput, existingFileHelper));
+		generator.addProvider(event.includeServer(), new BlockStateProvider(packOutput, existingFileHelper));
+		generator.addProvider(event.includeServer(), new FrogcraftItemModelProvider(packOutput, existingFileHelper));
 		
 //		FrogcraftBlockTagsProvider blockTagsProvider = generator.addProvider(event.includeServer(),
 //				new FrogcraftBlockTagsProvider(packOutput, lookupProvider, existingFileHelper));
