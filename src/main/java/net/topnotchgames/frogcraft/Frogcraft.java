@@ -15,6 +15,7 @@ import net.topnotchgames.frogcraft.common.SoundEvents.SoundEvents;
 import net.topnotchgames.frogcraft.common.block.Blocks;
 import net.topnotchgames.frogcraft.common.entity.Entities;
 import net.topnotchgames.frogcraft.common.item.Items;
+import net.topnotchgames.frogcraft.common.loot.LootModifiers;
 
 import org.slf4j.Logger;
 
@@ -32,13 +33,15 @@ public class Frogcraft {
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
         
-        // Register deferred block register
+        // Register deferred registers
         Blocks.registerBlocks(modEventBus);
-        // Register deferred item register
+        
         Items.registerItems(modEventBus);
-        // Register deferred block entity register
+        
+        LootModifiers.registerLootModifiers(modEventBus);
+
         Entities.registerEntities(modEventBus);
-        // Register deferred Sound register
+        
         SoundEvents.registerSounds(modEventBus);
 
         // Register ourselves for server and other game events we are interested in

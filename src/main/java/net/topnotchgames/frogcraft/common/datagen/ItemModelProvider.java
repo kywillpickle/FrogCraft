@@ -4,15 +4,14 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
-import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 import net.topnotchgames.frogcraft.Frogcraft;
 import net.topnotchgames.frogcraft.common.item.Items;
 
-public class FrogcraftItemModelProvider extends ItemModelProvider {
+public class ItemModelProvider extends net.minecraftforge.client.model.generators.ItemModelProvider {
 
-	public FrogcraftItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
+	public ItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
 		super(output, Frogcraft.MODID, existingFileHelper);
 	}
 

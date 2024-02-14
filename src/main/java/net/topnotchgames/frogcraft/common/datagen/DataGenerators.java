@@ -20,16 +20,18 @@ public class DataGenerators {
 		PackOutput packOutput = generator.getPackOutput();
 		ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
 		CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
-		
+
 		generator.addProvider(event.includeServer(), new RecipeProvider(packOutput));
-//		generator.addProvider(event.includeServer(), new FrogcraftLootTableProvider(packOutput));
-//		
+		generator.addProvider(event.includeServer(), new LootTableProvider(packOutput));
+
 		generator.addProvider(event.includeServer(), new BlockStateProvider(packOutput, existingFileHelper));
-		generator.addProvider(event.includeServer(), new FrogcraftItemModelProvider(packOutput, existingFileHelper));
+		generator.addProvider(event.includeServer(), new ItemModelProvider(packOutput, existingFileHelper));
+
+		BlockTagsProvider blockTagsProvider = generator.addProvider(event.includeServer(),
+				new BlockTagsProvider(packOutput, lookupProvider, existingFileHelper));
+		generator.addProvider(event.includeServer(), new ItemTagsProvider(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
 		
-//		FrogcraftBlockTagsProvider blockTagsProvider = generator.addProvider(event.includeServer(),
-//				new FrogcraftBlockTagsProvider(packOutput, lookupProvider, existingFileHelper));
-//		generator.addProvider(event.includeServer(), new FrogcraftItemTagsProvider(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
+		generator.addProvider(event.includeServer(), new GlobalLootModifiersProvider(packOutput));
 	}
 
 }

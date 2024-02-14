@@ -15,7 +15,7 @@ import net.topnotchgames.frogcraft.Frogcraft;
 import net.topnotchgames.frogcraft.common.entity.model.DesertFrogModel;
 import net.topnotchgames.frogcraft.common.entity.render.DesertFrogRenderer;
 
-public class Entities {
+public abstract class Entities {
 	
 	/* Initialize the Deferred EntityType Register */
 	public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, Frogcraft.MODID);
