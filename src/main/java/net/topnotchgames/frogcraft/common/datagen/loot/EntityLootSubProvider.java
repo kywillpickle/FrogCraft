@@ -25,6 +25,7 @@ public class EntityLootSubProvider extends net.minecraft.data.loot.EntityLootSub
 	@Override
 	public void generate() {
 		 buildFrogLootTable(Entities.DESERT_FROG);
+		 buildFrogLootTable(Entities.CRIMSON_FROG);
 	}
 	
 	private <T extends Frog> void buildFrogLootTable(RegistryObject<EntityType<T>> entity) {

@@ -4,12 +4,21 @@
 	"item.frogcraft.frog_leg": "Frog Leg",
 	"item.frogcraft.cooked_frog_leg": "Cooked Frog Leg",
 	"item.frogcraft.music_disc_lone_lilypad": "Music Disc",
-	"item.frogcraft.desert_frog_spawn_egg": "Desert Frog Spawn Egg",
+	
 	"item.frogcraft.music_disc_lone_lilypad.desc": "TBM - A Lone Lilypad",
 	"frogcraft.sound.subtitle.music_disc_lone_lilypad": "Music Disc",
 	"frogcraft.sound.subtitle.light_fixture_block": "Lights Flickering",
-	"frogcraft.sound.subtitle.desert_frog_croak_1": "Desert Frog",
-	"frogcraft.sound.subtitle.desert_frog_croak_2": "Desert Frog",
+	
+	"entity.frogcraft.desert_frog": "Desert Frog",
+	"entity.frogcraft.crimson_frog": "Crimson Frog",
+	
+	"item.frogcraft.desert_frog_spawn_egg": "Desert Frog Spawn Egg",
+	"item.frogcraft.crimson_frog_spawn_egg": "Crimson Frog Spawn Egg",
+	
+	"frogcraft.sound.subtitle.desert_frog_croak_ambient": "Desert Frog Ambient",
+	"frogcraft.sound.subtitle.desert_frog_croak_hurt": "Desert Frog Hurt",
+	"frogcraft.sound.subtitle.crimson_frog_croak_ambient": "Crimson Frog Ambient",
+	"frogcraft.sound.subtitle.crimson_frog_croak_hurt": "Crimson Frog Hurt",
 	
 	"item.frogcraft.light_fixture_block": "Light Fixture Block",
 	"item.frogcraft.black_liminal_carpet": "Black Liminal Carpet",

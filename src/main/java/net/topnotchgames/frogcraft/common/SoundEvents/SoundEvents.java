@@ -18,8 +18,12 @@ public abstract class SoundEvents {
 	
 	public static final RegistryObject<SoundEvent> LIGHT_FIXTURE_BLOCK = register("light_fixture_block");
 	
-	public static final RegistryObject<SoundEvent> DESERT_FROG_CROAK_1 = register("desert_frog_croak_1");
-	public static final RegistryObject<SoundEvent> DESERT_FROG_CROAK_2 = register("desert_frog_croak_2");
+	/* Entity Sounds */
+	public static final RegistryObject<SoundEvent> DESERT_FROG_CROAK_AMBIENT = register("desert_frog_croak_ambient");
+	public static final RegistryObject<SoundEvent> DESERT_FROG_CROAK_HURT = register("desert_frog_croak_hurt");
+	
+	public static final RegistryObject<SoundEvent> CRIMSON_FROG_CROAK_AMBIENT = register("crimson_frog_croak_ambient");
+	public static final RegistryObject<SoundEvent> CRIMSON_FROG_CROAK_HURT = register("crimson_frog_croak_hurt");
 	
 	/* Register Helpers */
 	private static RegistryObject<SoundEvent> register(String name) {

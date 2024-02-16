@@ -48,6 +48,7 @@ public abstract class Items {
 	
 	/* Initialize SpawnEggItems */
 	public static final RegistryObject<ForgeSpawnEggItem> DESERT_FROG_SPAWN_EGG = registerSpawnEggItem(Entities.DESERT_FROG, 0x7b6046, 0xa99b8f);
+	public static final RegistryObject<ForgeSpawnEggItem> CRIMSON_FROG_SPAWN_EGG = registerSpawnEggItem(Entities.CRIMSON_FROG, 0x7b0000, 0xff8535);
 	
 	/* Initialize BlockItems */
     public static final RegistryObject<BlockItem> LIGHT_FIXTURE_BLOCK = registerBlockItem(Blocks.LIGHT_FIXTURE_BLOCK);

@@ -23,6 +23,7 @@ public class ItemModelProvider extends net.minecraftforge.client.model.generator
 		simpleItem(Items.MUSIC_DISC_LONE_LILYPAD);
 		
 		spawnEggItem(Items.DESERT_FROG_SPAWN_EGG);
+		spawnEggItem(Items.CRIMSON_FROG_SPAWN_EGG);
 	}
 	
 	private ItemModelBuilder simpleItem(RegistryObject<? extends Item> item) {

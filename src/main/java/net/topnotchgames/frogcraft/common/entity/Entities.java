@@ -12,7 +12,9 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.topnotchgames.frogcraft.Frogcraft;
+import net.topnotchgames.frogcraft.common.entity.model.CrimsonFrogModel;
 import net.topnotchgames.frogcraft.common.entity.model.DesertFrogModel;
+import net.topnotchgames.frogcraft.common.entity.render.CrimsonFrogRenderer;
 import net.topnotchgames.frogcraft.common.entity.render.DesertFrogRenderer;
 
 public abstract class Entities {
@@ -26,6 +28,11 @@ public abstract class Entities {
 			.sized(0.2F, 0.2F).clientTrackingRange(5)
 			.build(new ResourceLocation(Frogcraft.MODID, "upgradable_type").toString())
 	);
+	public static final RegistryObject<EntityType<CrimsonFrogEntity>> CRIMSON_FROG = ENTITY_TYPES.register("crimson_frog", () ->
+	EntityType.Builder.of(CrimsonFrogEntity::new, MobCategory.CREATURE)
+		.sized(0.25F, 0.25F).clientTrackingRange(5)
+		.build(new ResourceLocation(Frogcraft.MODID, "upgradable_type").toString())
+);
 	
 	/* Deferred Register */
 	public static void registerEntities(IEventBus modEventBus) {
@@ -34,19 +41,17 @@ public abstract class Entities {
 	
 	/* Registered Entity EventHandlers */
 	public static void registerEntityAttributes(EntityAttributeCreationEvent event) {
-	    event.put(DESERT_FROG.get(),
-	    		Mob.createMobAttributes()
-	    			.add(Attributes.MOVEMENT_SPEED, 1.0D)
-	    			.add(Attributes.MAX_HEALTH, 10.0D)
-	    			.add(Attributes.ATTACK_DAMAGE, 10.0D)
-	    		.build());
+	    event.put(DESERT_FROG.get(), DesertFrogEntity.createAttributes().build());
+	    event.put(CRIMSON_FROG.get(), CrimsonFrogEntity.createAttributes().build());
 	}
 	public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
 		event.registerEntityRenderer(DESERT_FROG.get(), DesertFrogRenderer::new);
+		event.registerEntityRenderer(CRIMSON_FROG.get(), CrimsonFrogRenderer::new);
 	}
 	
 	public static void registerEntityLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event)
     {
         event.registerLayerDefinition(DesertFrogModel.LAYER_LOCATION, DesertFrogModel::createBodyLayer);
+        event.registerLayerDefinition(CrimsonFrogModel.LAYER_LOCATION, CrimsonFrogModel::createBodyLayer);
     }
 }

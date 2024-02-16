@@ -16,19 +16,35 @@
 		}
 	]
   },
-  "desert_frog_croak_1": {
-    "subtitle": "frogcraft.sound.subtitle.desert_frog_croak_1",
+  "desert_frog_croak_ambient": {
+    "subtitle": "frogcraft.sound.subtitle.desert_frog_croak_ambient",
     "sounds": [
 		{
-			"name": "frogcraft:desert_frog_croak_1"
+			"name": "frogcraft:desert_frog_croak_ambient"
 		}
 	]
   },
-  "desert_frog_croak_2": {
-    "subtitle": "frogcraft.sound.subtitle.desert_frog_croak_2",
+  "desert_frog_croak_hurt": {
+    "subtitle": "frogcraft.sound.subtitle.desert_frog_croak_hurt",
     "sounds": [
 		{
-			"name": "frogcraft:desert_frog_croak_2"
+			"name": "frogcraft:desert_frog_croak_hurt"
+		}
+	]
+  },
+  "crimson_frog_croak_ambient": {
+    "subtitle": "frogcraft.sound.subtitle.crimson_frog_croak_ambient",
+    "sounds": [
+		{
+			"name": "frogcraft:crimson_frog_croak_ambient"
+		}
+	]
+  },
+  "crimson_frog_croak_hurt": {
+    "subtitle": "frogcraft.sound.subtitle.crimson_frog_croak_hurt",
+    "sounds": [
+		{
+			"name": "frogcraft:crimson_frog_croak_hurt"
 		}
 	]
   }

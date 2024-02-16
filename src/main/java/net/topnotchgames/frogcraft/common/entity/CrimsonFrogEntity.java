@@ -13,28 +13,28 @@ import net.minecraft.world.entity.animal.frog.Frog;
 import net.minecraft.world.level.Level;
 import net.topnotchgames.frogcraft.common.SoundEvents.SoundEvents;
 
-public class DesertFrogEntity extends Frog {
+public class CrimsonFrogEntity extends Frog {
 
-	public DesertFrogEntity(EntityType<? extends Animal> p_218470_, Level p_218471_) {
+	public CrimsonFrogEntity(EntityType<? extends Animal> p_218470_, Level p_218471_) {
 	    super(p_218470_, p_218471_);
 	}
 	
 	public static AttributeSupplier.Builder createAttributes() {
-		return Mob.createMobAttributes().add(Attributes.MOVEMENT_SPEED, 1.0D).add(Attributes.MAX_HEALTH, 10.0D).add(Attributes.ATTACK_DAMAGE, 10.0D);
+		return Mob.createMobAttributes().add(Attributes.MOVEMENT_SPEED, 1.0D).add(Attributes.MAX_HEALTH, 16.0D).add(Attributes.ATTACK_DAMAGE, 10.0D);
 	}
 	
 	@Nullable
 	protected SoundEvent getAmbientSound() {
-		return SoundEvents.DESERT_FROG_CROAK_AMBIENT.get();
+		return SoundEvents.CRIMSON_FROG_CROAK_AMBIENT.get();
 	}
 	
 	@Nullable
 	protected SoundEvent getHurtSound(DamageSource p_218510_) {
-		return SoundEvents.DESERT_FROG_CROAK_HURT.get();
+		return SoundEvents.CRIMSON_FROG_CROAK_HURT.get();
 	}
 
 	@Nullable
 	protected SoundEvent getDeathSound() {
-		return SoundEvents.DESERT_FROG_CROAK_HURT.get();
+		return SoundEvents.CRIMSON_FROG_CROAK_HURT.get();
  	 }
 }
