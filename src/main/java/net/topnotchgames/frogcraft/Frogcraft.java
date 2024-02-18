@@ -11,11 +11,11 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.topnotchgames.frogcraft.common.SoundEvents.SoundEvents;
-import net.topnotchgames.frogcraft.common.block.Blocks;
-import net.topnotchgames.frogcraft.common.entity.Entities;
-import net.topnotchgames.frogcraft.common.item.Items;
-import net.topnotchgames.frogcraft.common.loot.LootModifiers;
+import net.topnotchgames.frogcraft.sounds.SoundEvents;
+import net.topnotchgames.frogcraft.world.block.Blocks;
+import net.topnotchgames.frogcraft.world.entity.Entities;
+import net.topnotchgames.frogcraft.world.item.Items;
+import net.topnotchgames.frogcraft.world.level.storage.loot.LootModifiers;
 
 import org.slf4j.Logger;
 
