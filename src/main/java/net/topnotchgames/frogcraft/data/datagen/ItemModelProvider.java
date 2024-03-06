@@ -22,6 +22,8 @@ public class ItemModelProvider extends net.minecraftforge.client.model.generator
 		
 		simpleItem(Items.FROG_EYE);
 		
+		simpleItem(Items.BUTTERFLY_NET);
+		
 		simpleItem(Items.MUSIC_DISC_LONE_LILYPAD);
 		
 		spawnEggItem(Items.DESERT_FROG_SPAWN_EGG);

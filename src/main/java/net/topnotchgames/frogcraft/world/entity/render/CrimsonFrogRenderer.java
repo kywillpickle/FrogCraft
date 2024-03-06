@@ -13,7 +13,7 @@ public class CrimsonFrogRenderer extends MobRenderer<CrimsonFrogEntity,CrimsonFr
 	protected static final ResourceLocation TEXTURE = new ResourceLocation(Frogcraft.MODID, "textures/entity/crimson_frog.png");
 	
 	public CrimsonFrogRenderer(EntityRendererProvider.Context ctx) {
-		super(ctx, new CrimsonFrogModel(ctx.bakeLayer(CrimsonFrogModel.LAYER_LOCATION)), 0.25F);
+		super(ctx, new CrimsonFrogModel(ctx.bakeLayer(CrimsonFrogModel.LAYER_LOCATION)), 0.3F);
 	}
 
 	@Override

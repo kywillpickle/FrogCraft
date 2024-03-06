@@ -25,12 +25,12 @@ public abstract class Entities {
 	/* Initialize EntityTypes */
 	public static final RegistryObject<EntityType<DesertFrogEntity>> DESERT_FROG = ENTITY_TYPES.register("desert_frog", () ->
 		EntityType.Builder.of(DesertFrogEntity::new, MobCategory.CREATURE)
-			.sized(0.2F, 0.2F).clientTrackingRange(5)
+			.sized(0.5F, 0.5F).clientTrackingRange(5)
 			.build(new ResourceLocation(Frogcraft.MODID, "upgradable_type").toString())
 	);
 	public static final RegistryObject<EntityType<CrimsonFrogEntity>> CRIMSON_FROG = ENTITY_TYPES.register("crimson_frog", () ->
 	EntityType.Builder.of(CrimsonFrogEntity::new, MobCategory.CREATURE)
-		.sized(0.25F, 0.25F).clientTrackingRange(5)
+		.sized(0.6F, 0.6F).clientTrackingRange(5)
 		.build(new ResourceLocation(Frogcraft.MODID, "upgradable_type").toString())
 );
 	

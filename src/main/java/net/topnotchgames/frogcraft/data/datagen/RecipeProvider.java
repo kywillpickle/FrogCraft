@@ -30,15 +30,26 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider im
 		/* Cooked Recipies */
 		buildCooked(writer, Items.FROG_LEG, Items.COOKED_FROG_LEG);
 		
-		/* Light Fixture Recipies */
-		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Items.LIGHT_FIXTURE_BLOCK.get(), 8)
-			.define('G', net.minecraft.world.item.Items.GLOWSTONE)
-			.define('L', Items.FROG_LEG.get())
-				.pattern("GGG")
-				.pattern("GLG")
-				.pattern("GGG")
+		/* Butterfly Net */
+		ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, Items.BUTTERFLY_NET.get(), 1)
+			.define('/', net.minecraft.world.item.Items.STICK)
+			.define('S', net.minecraft.world.item.Items.STRING)
+			.define('W', net.minecraft.tags.ItemTags.WOOL)
+				.pattern(" S/")
+				.pattern(" /W")
+				.pattern("/  ")
 			.unlockedBy(getHasName(Items.FROG_LEG.get()), has(Items.FROG_LEG.get()))
 		.save(writer);
+		
+		/* Light Fixture Block */
+		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, Items.LIGHT_FIXTURE_BLOCK.get(), 1)
+		.define('G', net.minecraft.world.item.Items.GLOWSTONE)
+		.define('L', Items.FROG_LEG.get())
+			.pattern("GGG")
+			.pattern("GLG")
+			.pattern("GGG")
+		.unlockedBy(getHasName(Items.FROG_LEG.get()), has(Items.FROG_LEG.get()))
+	.save(writer);
 		
 		/* Base Liminal Block Recipies */
 		buildLiminalBlock(writer, Tags.Items.LIMINAL_WALL,   ItemTags.PLANKS,                            Items.YELLOW_LIMINAL_WALL);

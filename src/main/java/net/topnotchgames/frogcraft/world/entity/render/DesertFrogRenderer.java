@@ -11,7 +11,7 @@ public class DesertFrogRenderer extends MobRenderer<DesertFrogEntity, DesertFrog
 	protected static final ResourceLocation TEXTURE = new ResourceLocation(Frogcraft.MODID, "textures/entity/desert_frog.png");
 	
 	public DesertFrogRenderer(EntityRendererProvider.Context ctx) {
-		super(ctx, new DesertFrogModel(ctx.bakeLayer(DesertFrogModel.LAYER_LOCATION)), 0.2F);
+		super(ctx, new DesertFrogModel(ctx.bakeLayer(DesertFrogModel.LAYER_LOCATION)), 0.25F);
 	}
 
 	@Override

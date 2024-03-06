@@ -46,6 +46,8 @@ public abstract class Items {
 	
 	public static final RegistryObject<Item> FROG_EYE = register("frog_eye", () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
 	
+	public static final RegistryObject<ButterflyNetItem> BUTTERFLY_NET = register("butterfly_net", () -> new ButterflyNetItem(new Item.Properties()));
+	
 	public static final RegistryObject<RecordItem> MUSIC_DISC_LONE_LILYPAD = registerRecordItem("music_disc_lone_lilypad", SoundEvents.LONE_LILYPAD_DISK, 1400);
 	
 	/* Initialize SpawnEggItems */
@@ -117,7 +119,7 @@ public abstract class Items {
     }
     
     /* Register Helpers */
-    private static RegistryObject<Item> register(String name, Supplier<Item> item) {
+    private static <T extends Item> RegistryObject<T> register(String name, Supplier<T> item) {
 		return ITEMS.register(name, item);
 	}
     
