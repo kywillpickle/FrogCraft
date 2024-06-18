@@ -5,9 +5,10 @@ import java.util.Map;
 
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.material.MapColor;
 
-public abstract class LiminalBlock extends Block {
+public abstract class AbstractLiminalBlock extends Block {
 	private static final Map<DyeColor, MapColor> DYE_TO_MAP_COLOR = new HashMap<DyeColor, MapColor>(); static {
 		DYE_TO_MAP_COLOR.put(DyeColor.BLACK, MapColor.COLOR_BLACK);
 		DYE_TO_MAP_COLOR.put(DyeColor.RED, MapColor.COLOR_RED);
@@ -27,7 +28,7 @@ public abstract class LiminalBlock extends Block {
 		DYE_TO_MAP_COLOR.put(DyeColor.WHITE, MapColor.SNOW);
 	}
 	public final DyeColor COLOR;
-	public LiminalBlock(Properties properties, DyeColor color) {
+	public AbstractLiminalBlock(Properties properties, DyeColor color) {
 		super(properties.mapColor(DYE_TO_MAP_COLOR.get(color)));
 		this.COLOR = color;
 	}

@@ -31,7 +31,7 @@ import net.topnotchgames.frogcraft.sounds.SoundEvents;
 import net.topnotchgames.frogcraft.world.block.Blocks;
 import net.topnotchgames.frogcraft.world.entity.Entities;
 
-public abstract class Items {
+public class Items {
 	
 	/* Initialize the Deferred Items Register */
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Frogcraft.MODID);
@@ -55,6 +55,8 @@ public abstract class Items {
 	public static final RegistryObject<ForgeSpawnEggItem> CRIMSON_FROG_SPAWN_EGG = registerSpawnEggItem(Entities.CRIMSON_FROG, 0x7b0000, 0xff8535);
 	
 	/* Initialize BlockItems */
+	public static final RegistryObject<BlockItem> FROG_BLENDER_BLOCK = registerBlockItem(Blocks.FROG_BLENDER_BLOCK);
+	
     public static final RegistryObject<BlockItem> LIGHT_FIXTURE_BLOCK = registerBlockItem(Blocks.LIGHT_FIXTURE_BLOCK);
     
     public static final RegistryObject<BlockItem> BLACK_LIMINAL_WALL      = registerBlockItem(Blocks.BLACK_LIMINAL_WALL);

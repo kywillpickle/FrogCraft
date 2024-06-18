@@ -8,7 +8,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.topnotchgames.frogcraft.Frogcraft;
 
-public abstract class SoundEvents {
+public class SoundEvents {
 	
 	/* Initialize the Deferred SoundEvent Register */
 	public static final DeferredRegister<SoundEvent> SOUND_EVENTS = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, Frogcraft.MODID);

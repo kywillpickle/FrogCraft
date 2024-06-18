@@ -13,6 +13,7 @@ import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.topnotchgames.frogcraft.sounds.SoundEvents;
 import net.topnotchgames.frogcraft.world.block.Blocks;
+import net.topnotchgames.frogcraft.world.block.entity.BlockEntities;
 import net.topnotchgames.frogcraft.world.entity.Entities;
 import net.topnotchgames.frogcraft.world.item.Items;
 import net.topnotchgames.frogcraft.world.level.storage.loot.LootModifiers;
@@ -42,12 +43,17 @@ public class Frogcraft {
 
         Entities.registerEntities(modEventBus);
         
+        BlockEntities.registerBlockEntities(modEventBus);
+        
         SoundEvents.registerSounds(modEventBus);
 
         // Register ourselves for server and other game events we are interested in
         modEventBus.addListener((EntityAttributeCreationEvent event) -> Entities.registerEntityAttributes(event));
         modEventBus.addListener((EntityRenderersEvent.RegisterLayerDefinitions event) -> Entities.registerEntityLayerDefinitions(event));
         modEventBus.addListener((EntityRenderersEvent.RegisterRenderers event) -> Entities.registerEntityRenderers(event));
+        
+        modEventBus.addListener((EntityRenderersEvent.RegisterLayerDefinitions event) -> BlockEntities.registerEntityLayerDefinitions(event));
+        modEventBus.addListener((EntityRenderersEvent.RegisterRenderers event) -> BlockEntities.registerEntityRenderers(event));
         
         MinecraftForge.EVENT_BUS.register(this);
     }

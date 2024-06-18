@@ -15,7 +15,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 import net.minecraftforge.registries.RegistryObject;
 import net.topnotchgames.frogcraft.data.tags.Tags;
-import net.topnotchgames.frogcraft.world.block.LiminalBlock;
+import net.topnotchgames.frogcraft.world.block.AbstractLiminalBlock;
 import net.topnotchgames.frogcraft.world.item.Items;
 
 public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider implements IConditionBuilder{
@@ -132,7 +132,7 @@ public class RecipeProvider extends net.minecraft.data.recipes.RecipeProvider im
 	private void buildDyedLiminalBlock(Consumer<FinishedRecipe> writer, TagKey<Item> liminalItemTag, RegistryObject<BlockItem> product) {
 		ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, product.get(), 8)
 				.define('#', liminalItemTag)
-				.define('D', ((LiminalBlock) product.get().getBlock()).COLOR.getTag())
+				.define('D', ((AbstractLiminalBlock) product.get().getBlock()).COLOR.getTag())
 					.pattern("###")
 					.pattern("#D#")
 					.pattern("###")

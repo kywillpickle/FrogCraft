@@ -3,12 +3,15 @@ package net.topnotchgames.frogcraft.world.entity.render;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.topnotchgames.frogcraft.Frogcraft;
 import net.topnotchgames.frogcraft.world.entity.CrimsonFrogEntity;
 import net.topnotchgames.frogcraft.world.entity.DesertFrogEntity;
 import net.topnotchgames.frogcraft.world.entity.model.CrimsonFrogModel;
 import net.topnotchgames.frogcraft.world.entity.model.DesertFrogModel;
 
+@OnlyIn(Dist.CLIENT)
 public class CrimsonFrogRenderer extends MobRenderer<CrimsonFrogEntity,CrimsonFrogModel> {
 	protected static final ResourceLocation TEXTURE = new ResourceLocation(Frogcraft.MODID, "textures/entity/crimson_frog.png");
 	

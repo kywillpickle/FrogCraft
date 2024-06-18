@@ -10,6 +10,9 @@ import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.model.geom.builders.MeshDefinition;
 import net.minecraft.client.model.geom.builders.PartDefinition;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import net.topnotchgames.frogcraft.Frogcraft;
 import net.topnotchgames.frogcraft.world.entity.CrimsonFrogEntity;
 import net.topnotchgames.frogcraft.world.entity.animation.CrimsonFrogAnimation;
 
@@ -17,10 +20,10 @@ import net.topnotchgames.frogcraft.world.entity.animation.CrimsonFrogAnimation;
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
 
-
+@OnlyIn(Dist.CLIENT)
 public class CrimsonFrogModel extends HierarchicalModel<CrimsonFrogEntity> {
 	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
-	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation("modid", "crimson_frog"), "main");
+	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(Frogcraft.MODID, "crimson_frog"), "main");
 	private final ModelPart root;
 
 	public CrimsonFrogModel(ModelPart root) {

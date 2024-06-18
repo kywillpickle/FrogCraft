@@ -9,7 +9,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.topnotchgames.frogcraft.Frogcraft;
 
-public abstract class LootModifiers {
+public class LootModifiers {
 	/* Initialize the Deferred Loot Modifier Serializers Register */
 	public static final DeferredRegister<Codec<? extends IGlobalLootModifier>> LOOT_MODIFIER_SERIALIZERS =
 			DeferredRegister.create(ForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, Frogcraft.MODID);

@@ -16,8 +16,9 @@ import net.topnotchgames.frogcraft.world.entity.model.CrimsonFrogModel;
 import net.topnotchgames.frogcraft.world.entity.model.DesertFrogModel;
 import net.topnotchgames.frogcraft.world.entity.render.CrimsonFrogRenderer;
 import net.topnotchgames.frogcraft.world.entity.render.DesertFrogRenderer;
+import net.topnotchgames.frogcraft.world.entity.render.FrogBlenderBlockEntityRenderer;
 
-public abstract class Entities {
+public class Entities {
 	
 	/* Initialize the Deferred EntityType Register */
 	public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, Frogcraft.MODID);
@@ -49,8 +50,7 @@ public abstract class Entities {
 		event.registerEntityRenderer(CRIMSON_FROG.get(), CrimsonFrogRenderer::new);
 	}
 	
-	public static void registerEntityLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event)
-    {
+	public static void registerEntityLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(DesertFrogModel.LAYER_LOCATION, DesertFrogModel::createBodyLayer);
         event.registerLayerDefinition(CrimsonFrogModel.LAYER_LOCATION, CrimsonFrogModel::createBodyLayer);
     }

@@ -5,12 +5,11 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 
-public class LiminalTiles extends LiminalBlock {
-	public LiminalTiles(DyeColor color) {
-		super(BlockBehaviour.Properties.of()
-				.strength(2.0F, 3.0F)
-				.instrument(NoteBlockInstrument.GUITAR)
-				.sound(SoundType.WOOL)
+public class LiminalCarpetBlock extends AbstractLiminalBlock {
+	public LiminalCarpetBlock(DyeColor color) {
+		super(BlockBehaviour.Properties.of().strength(0.8F)
+				.instrument(NoteBlockInstrument.BASS)
+				.sound(SoundType.WOOD)
 				.ignitedByLava()
 			, color);
 	}
