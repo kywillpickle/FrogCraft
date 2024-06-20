@@ -1,4 +1,4 @@
-package net.topnotchgames.frogcraft.world.entity.render;
+package net.topnotchgames.frogcraft.client.renderer.entity;
 
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
@@ -6,8 +6,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.topnotchgames.frogcraft.Frogcraft;
+import net.topnotchgames.frogcraft.client.model.DesertFrogModel;
 import net.topnotchgames.frogcraft.world.entity.DesertFrogEntity;
-import net.topnotchgames.frogcraft.world.entity.model.DesertFrogModel;
 
 @OnlyIn(Dist.CLIENT)
 public class DesertFrogRenderer extends MobRenderer<DesertFrogEntity, DesertFrogModel> {

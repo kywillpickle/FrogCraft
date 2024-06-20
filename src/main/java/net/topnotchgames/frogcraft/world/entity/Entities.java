@@ -12,11 +12,10 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.topnotchgames.frogcraft.Frogcraft;
-import net.topnotchgames.frogcraft.world.entity.model.CrimsonFrogModel;
-import net.topnotchgames.frogcraft.world.entity.model.DesertFrogModel;
-import net.topnotchgames.frogcraft.world.entity.render.CrimsonFrogRenderer;
-import net.topnotchgames.frogcraft.world.entity.render.DesertFrogRenderer;
-import net.topnotchgames.frogcraft.world.entity.render.FrogBlenderBlockEntityRenderer;
+import net.topnotchgames.frogcraft.client.model.CrimsonFrogModel;
+import net.topnotchgames.frogcraft.client.model.DesertFrogModel;
+import net.topnotchgames.frogcraft.client.renderer.entity.CrimsonFrogRenderer;
+import net.topnotchgames.frogcraft.client.renderer.entity.DesertFrogRenderer;
 
 public class Entities {
 	

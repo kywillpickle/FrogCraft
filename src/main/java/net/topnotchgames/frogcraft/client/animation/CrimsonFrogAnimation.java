@@ -1,10 +1,13 @@
-package net.topnotchgames.frogcraft.world.entity.animation;
+package net.topnotchgames.frogcraft.client.animation;
 
 import net.minecraft.client.animation.AnimationChannel;
 import net.minecraft.client.animation.AnimationDefinition;
 import net.minecraft.client.animation.Keyframe;
 import net.minecraft.client.animation.KeyframeAnimations;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
+@OnlyIn(Dist.CLIENT)
 public class CrimsonFrogAnimation {
 	public static final AnimationDefinition MODEL_CROAK = AnimationDefinition.Builder.withLength(0.5833F)
 		.addAnimation("base", new AnimationChannel(AnimationChannel.Targets.ROTATION, 

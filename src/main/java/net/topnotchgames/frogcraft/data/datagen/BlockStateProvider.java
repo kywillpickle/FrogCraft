@@ -1,7 +1,9 @@
 package net.topnotchgames.frogcraft.data.datagen;
 
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 import net.topnotchgames.frogcraft.Frogcraft;
@@ -17,6 +19,8 @@ public class BlockStateProvider extends net.minecraftforge.client.model.generato
 	protected void registerStatesAndModels() {
 		
 		blockWithItem(Blocks.LIGHT_FIXTURE_BLOCK);
+		
+		complexBlockWithItem(Blocks.FROG_BLENDER_BLOCK);
 		
 		/* Liminal Block Recipies */
 		blockWithItem(Blocks.BLACK_LIMINAL_WALL);
@@ -69,6 +73,9 @@ public class BlockStateProvider extends net.minecraftforge.client.model.generato
 		blockWithItem(Blocks.MAGENTA_LIMINAL_TILES);
 		blockWithItem(Blocks.ORANGE_LIMINAL_TILES);
 		blockWithItem(Blocks.WHITE_LIMINAL_TILES);
+	}
+	private void complexBlockWithItem(RegistryObject<? extends Block> block) {
+		simpleBlockWithItem(block.get(), new ModelFile.UncheckedModelFile(new ResourceLocation(Frogcraft.MODID, "block/".concat(block.getKey().toString()))));
 	}
 	
 	private void blockWithItem(RegistryObject<? extends Block> block) {

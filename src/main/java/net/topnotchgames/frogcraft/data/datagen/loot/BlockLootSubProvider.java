@@ -16,6 +16,7 @@ public class BlockLootSubProvider extends net.minecraft.data.loot.BlockLootSubPr
 	@Override
 	protected void generate() {
 		
+		dropSelf(Blocks.FROG_BLENDER_BLOCK);
 		dropSelf(Blocks.LIGHT_FIXTURE_BLOCK);
 		
 		/* Liminal Blocks */

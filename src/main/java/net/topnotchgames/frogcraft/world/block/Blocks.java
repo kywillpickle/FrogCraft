@@ -15,7 +15,7 @@ public class Blocks {
 	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Frogcraft.MODID);
 	
 	/* Initialize Blocks */
-	public static final RegistryObject<FrogBlenderBlock> FROG_BLENDER_BLOCK = register("frog_blender", () -> new FrogBlenderBlock());
+	public static final RegistryObject<FrogBlenderBlock> FROG_BLENDER_BLOCK = register("frog_blender_block", () -> new FrogBlenderBlock());
 	
 	public static final RegistryObject<LightFixtureBlock> LIGHT_FIXTURE_BLOCK = register("light_fixture_block", () -> new LightFixtureBlock());
 

@@ -1,4 +1,4 @@
-package net.topnotchgames.frogcraft.world.entity.model;
+package net.topnotchgames.frogcraft.client.model;
 
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
@@ -13,8 +13,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.topnotchgames.frogcraft.Frogcraft;
+import net.topnotchgames.frogcraft.client.animation.CrimsonFrogAnimation;
 import net.topnotchgames.frogcraft.world.entity.CrimsonFrogEntity;
-import net.topnotchgames.frogcraft.world.entity.animation.CrimsonFrogAnimation;
 
 // Made with Blockbench 4.9.3
 // Exported for Minecraft version 1.17 or later with Mojang mappings
