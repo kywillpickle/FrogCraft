@@ -13,6 +13,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.topnotchgames.frogcraft.Frogcraft;
+import net.topnotchgames.frogcraft.client.renderer.blockentity.FrogBlenderRenderer;
 import net.topnotchgames.frogcraft.world.block.Blocks;
 
 public class BlockEntities {
@@ -34,7 +35,7 @@ public class BlockEntities {
     
     /* Registered Entity EventHandlers */
 	public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
-//		event.registerBlockEntityRenderer(FROG_BLENDER_BLOCK_ENTITY.get(), FrogBlenderBlockEntityRenderer::new);
+		event.registerBlockEntityRenderer(FROG_BLENDER_BLOCK_ENTITY.get(), FrogBlenderRenderer::new);
 	}
 	
 	public static void registerEntityLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
