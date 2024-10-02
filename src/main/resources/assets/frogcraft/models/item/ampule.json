@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+      "layer0": "frogcraft:item/ampule_overlay",
+      "layer1": "frogcraft:item/ampule"
+  }
+}

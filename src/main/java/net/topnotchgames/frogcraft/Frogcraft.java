@@ -15,6 +15,8 @@ import net.topnotchgames.frogcraft.sounds.SoundEvents;
 import net.topnotchgames.frogcraft.world.block.Blocks;
 import net.topnotchgames.frogcraft.world.block.entity.BlockEntities;
 import net.topnotchgames.frogcraft.world.entity.Entities;
+import net.topnotchgames.frogcraft.world.fluid.FluidTypes;
+import net.topnotchgames.frogcraft.world.fluid.Fluids;
 import net.topnotchgames.frogcraft.world.item.Items;
 import net.topnotchgames.frogcraft.world.level.storage.loot.LootModifiers;
 
@@ -38,6 +40,9 @@ public class Frogcraft {
         Blocks.registerBlocks(modEventBus);
         
         Items.registerItems(modEventBus);
+        
+        Fluids.registerFluids(modEventBus);
+        FluidTypes.registerFluidTypes(modEventBus);
         
         LootModifiers.registerLootModifiers(modEventBus);
 

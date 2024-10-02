@@ -15,11 +15,11 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTab.ItemDisplayParameters;
 import net.minecraft.world.item.CreativeModeTab.Output;
 import net.minecraft.world.level.block.Block;
-
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -30,6 +30,7 @@ import net.topnotchgames.frogcraft.Frogcraft;
 import net.topnotchgames.frogcraft.sounds.SoundEvents;
 import net.topnotchgames.frogcraft.world.block.Blocks;
 import net.topnotchgames.frogcraft.world.entity.Entities;
+import net.topnotchgames.frogcraft.world.fluid.Fluids;
 
 public class Items {
 	
@@ -47,11 +48,17 @@ public class Items {
 	public static final RegistryObject<Item> FROG_EYE = register("frog_eye", () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
 	
 	public static final RegistryObject<ButterflyNetItem> BUTTERFLY_NET = register("butterfly_net", () -> new ButterflyNetItem(new Item.Properties()));
+	public static final RegistryObject<Item> SYRINGE                   = register("syringe", () -> new Item(new Item.Properties()));
+	public static final RegistryObject<Item> RITUAL_GUNBLADE           = register("ritual_gunblade", () -> new Item(new Item.Properties()));
+	public static final RegistryObject<Item> RITUAL_STYLUS           = register("ritual_stylus", () -> new Item(new Item.Properties()));
 	
 	public static final RegistryObject<RecordItem> MUSIC_DISC_LONE_LILYPAD = registerRecordItem("music_disc_lone_lilypad", SoundEvents.LONE_LILYPAD_DISK, 1400);
 	
+	/* Initialize Ampules */
+	public static final RegistryObject<Item> AMPULE = register("ampule", () -> new Item(new Item.Properties()));
+	
 	/* Initialize SpawnEggItems */
-	public static final RegistryObject<ForgeSpawnEggItem> DESERT_FROG_SPAWN_EGG = registerSpawnEggItem(Entities.DESERT_FROG, 0x7b6046, 0xa99b8f);
+	public static final RegistryObject<ForgeSpawnEggItem> DESERT_FROG_SPAWN_EGG  = registerSpawnEggItem(Entities.DESERT_FROG, 0x7b6046, 0xa99b8f);
 	public static final RegistryObject<ForgeSpawnEggItem> CRIMSON_FROG_SPAWN_EGG = registerSpawnEggItem(Entities.CRIMSON_FROG, 0x7b0000, 0xff8535);
 	
 	/* Initialize BlockItems */
@@ -110,6 +117,9 @@ public class Items {
     public static final RegistryObject<BlockItem> ORANGE_LIMINAL_TILES     = registerBlockItem(Blocks.ORANGE_LIMINAL_TILES);
     public static final RegistryObject<BlockItem> WHITE_LIMINAL_TILES      = registerBlockItem(Blocks.WHITE_LIMINAL_TILES);
     
+    /* Initialize Buckets */
+    public static final RegistryObject<Item> GOOP_BUCKET = register("goop_bucket", () -> new BucketItem(Fluids.GOOP, (new Item.Properties()).craftRemainder(net.minecraft.world.item.Items.BUCKET).stacksTo(1)));
+
     /* Specify which items go where in creative tab */
     private static ItemStack getCreativeTabIcon() {
     	return new ItemStack(Items.FROG_LEG.get());

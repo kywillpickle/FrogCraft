@@ -1,26 +1,25 @@
 {
 	"itemGroup.frogcraft": "Frogcraft",
 	
-	"item.frogcraft.frog_eye": "Frog Eye",
 	"item.frogcraft.frog_leg": "Frog Leg",
 	"item.frogcraft.cooked_frog_leg": "Cooked Frog Leg",
+	"item.frogcraft.frog_eye": "Frog Eye",
+
+	"item.frogcraft.butterfly_net": "Butterfly Net",
+	"item.frogcraft.butterfly_net.desc": "...but for frogs?",
+
+	"item.frogcraft.syringe": "Syringe",
+
+	"item.frogcraft.ritual_gunblade": "Ritual Gunblade",
+
+	"item.frogcraft.ritual_stylus": "Ritual Stylus",
+
 	"item.frogcraft.music_disc_lone_lilypad": "Music Disc",
-	
 	"item.frogcraft.music_disc_lone_lilypad.desc": "TBM - A Lone Lilypad",
-	"frogcraft.sound.subtitle.music_disc_lone_lilypad": "Music Disc",
-	"frogcraft.sound.subtitle.light_fixture_block": "Lights Flickering",
+
+	"item.frogcraft.ampule": "Ampule",
 	
-	"entity.frogcraft.desert_frog": "Desert Frog",
-	"entity.frogcraft.crimson_frog": "Crimson Frog",
-	
-	"item.frogcraft.desert_frog_spawn_egg": "Desert Frog Spawn Egg",
-	"item.frogcraft.crimson_frog_spawn_egg": "Crimson Frog Spawn Egg",
-	
-	"frogcraft.sound.subtitle.desert_frog_croak_ambient": "Desert Frog Ambient",
-	"frogcraft.sound.subtitle.desert_frog_croak_hurt": "Desert Frog Hurt",
-	"frogcraft.sound.subtitle.crimson_frog_croak_ambient": "Crimson Frog Ambient",
-	"frogcraft.sound.subtitle.crimson_frog_croak_hurt": "Crimson Frog Hurt",
-	
+	"item.frogcraft.frog_blender_block": "Frog Blender Block",
 	"item.frogcraft.light_fixture_block": "Light Fixture Block",
 	"item.frogcraft.black_liminal_carpet": "Black Liminal Carpet",
 	"item.frogcraft.black_liminal_tiles": "Black Liminal Tiles",
@@ -71,6 +70,7 @@
 	"item.frogcraft.yellow_liminal_tiles": "Yellow Liminal Tiles",
 	"item.frogcraft.yellow_liminal_wall": "Yellow Liminal Wall",
 	
+	"block.frogcraft.frog_blender_block": "Frog Blender Block",
 	"block.frogcraft.light_fixture_block": "Light Fixture Block",
 	"block.frogcraft.black_liminal_carpet": "Black Liminal Carpet",
 	"block.frogcraft.black_liminal_tiles": "Black Liminal Tiles",
@@ -119,5 +119,18 @@
 	"block.frogcraft.white_liminal_wall": "White Liminal Wall",
 	"block.frogcraft.yellow_liminal_carpet": "Yellow Liminal Carpet",
 	"block.frogcraft.yellow_liminal_tiles": "Yellow Liminal Tiles",
-	"block.frogcraft.yellow_liminal_wall": "Yellow Liminal Wall"
+	"block.frogcraft.yellow_liminal_wall": "Yellow Liminal Wall",
+
+	"entity.frogcraft.desert_frog": "Desert Frog",
+	"entity.frogcraft.crimson_frog": "Crimson Frog",
+	
+	"item.frogcraft.desert_frog_spawn_egg": "Desert Frog Spawn Egg",
+	"item.frogcraft.crimson_frog_spawn_egg": "Crimson Frog Spawn Egg",
+	
+	"frogcraft.sound.subtitle.music_disc_lone_lilypad": "Music Disc",
+	"frogcraft.sound.subtitle.light_fixture_block": "Lights Flickering",
+	"frogcraft.sound.subtitle.desert_frog_croak_ambient": "Desert Frog Ambient",
+	"frogcraft.sound.subtitle.desert_frog_croak_hurt": "Desert Frog Hurt",
+	"frogcraft.sound.subtitle.crimson_frog_croak_ambient": "Crimson Frog Ambient",
+	"frogcraft.sound.subtitle.crimson_frog_croak_hurt": "Crimson Frog Hurt"
 }

@@ -4,11 +4,17 @@ import java.util.function.Supplier;
 
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.LiquidBlock;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.topnotchgames.frogcraft.Frogcraft;
+import net.topnotchgames.frogcraft.world.fluid.Fluids;
 
 public class Blocks {
 	/* Initialize the Deferred Block Register */
@@ -69,6 +75,9 @@ public class Blocks {
     public static final RegistryObject<LiminalTilesBlock> MAGENTA_LIMINAL_TILES    = register("magenta_liminal_tiles",    () -> new LiminalTilesBlock(DyeColor.MAGENTA));
     public static final RegistryObject<LiminalTilesBlock> ORANGE_LIMINAL_TILES     = register("orange_liminal_tiles",     () -> new LiminalTilesBlock(DyeColor.ORANGE));
     public static final RegistryObject<LiminalTilesBlock> WHITE_LIMINAL_TILES      = register("white_liminal_tiles",      () -> new LiminalTilesBlock(DyeColor.WHITE));
+    
+    /* Initalize Legacy Fluids */
+    public static final RegistryObject<LiquidBlock> GOOP = register("water", () -> new LiquidBlock(Fluids.GOOP, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GREEN).replaceable().noCollission().strength(100.0F).pushReaction(PushReaction.DESTROY).noLootTable().liquid().sound(SoundType.EMPTY)));
     
     /* Register Helpers */
     private static <T extends Block> RegistryObject<T> register(String name, Supplier<T> block) {

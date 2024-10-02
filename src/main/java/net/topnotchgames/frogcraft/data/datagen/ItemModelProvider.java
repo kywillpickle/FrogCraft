@@ -22,12 +22,27 @@ public class ItemModelProvider extends net.minecraftforge.client.model.generator
 		
 		simpleItem(Items.FROG_EYE);
 		
-		simpleItem(Items.BUTTERFLY_NET);
+		handheldItem(Items.BUTTERFLY_NET);
+		flippedHandheldItem(Items.RITUAL_GUNBLADE);
 		
 		simpleItem(Items.MUSIC_DISC_LONE_LILYPAD);
 		
 		spawnEggItem(Items.DESERT_FROG_SPAWN_EGG);
 		spawnEggItem(Items.CRIMSON_FROG_SPAWN_EGG);
+		
+		simpleItem(Items.GOOP_BUCKET);
+	}
+	
+	private ItemModelBuilder handheldItem(RegistryObject<? extends Item> item) {
+		return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/handheld")).texture("layer0",
+                new ResourceLocation(Frogcraft.MODID,"item/" + item.getId().getPath()));
+	}
+	
+	private ItemModelBuilder flippedHandheldItem(RegistryObject<? extends Item> item) {
+		return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/handheld_rod")).texture("layer0",
+                new ResourceLocation(Frogcraft.MODID,"item/" + item.getId().getPath()));
 	}
 	
 	private ItemModelBuilder simpleItem(RegistryObject<? extends Item> item) {

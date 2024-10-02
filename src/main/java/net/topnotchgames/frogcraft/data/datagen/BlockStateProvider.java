@@ -75,7 +75,7 @@ public class BlockStateProvider extends net.minecraftforge.client.model.generato
 		blockWithItem(Blocks.WHITE_LIMINAL_TILES);
 	}
 	private void complexBlockWithItem(RegistryObject<? extends Block> block) {
-		simpleBlockWithItem(block.get(), new ModelFile.UncheckedModelFile(new ResourceLocation(Frogcraft.MODID, "block/".concat(block.getKey().toString()))));
+		simpleBlockWithItem(block.get(), new ModelFile.UncheckedModelFile(new ResourceLocation(Frogcraft.MODID, "block/" + block.getId().getPath())));
 	}
 	
 	private void blockWithItem(RegistryObject<? extends Block> block) {

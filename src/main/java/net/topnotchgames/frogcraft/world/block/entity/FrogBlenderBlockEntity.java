@@ -14,7 +14,7 @@ public class FrogBlenderBlockEntity extends BlockEntity {
 	public static final int CAPACITY = 4;
 	private int numFrogs;
 	
-	private static final float LERP_COEF = 0.1F;
+	private static final float LERP_COEF = 0.2F;
 	private static final float MAX_GOOP_HEIGHT = 14.0F;
 	private float goopHeight;
 	
@@ -52,6 +52,7 @@ public class FrogBlenderBlockEntity extends BlockEntity {
 	public void load(CompoundTag tag) {
 		super.load(tag);
 		this.numFrogs = tag.getInt("frog_blender.num_frogs");
+		this.goopHeight = this.numFrogs/CAPACITY * MAX_GOOP_HEIGHT;
 	}
 	
 	@Override

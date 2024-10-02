@@ -1,7 +1,5 @@
 package net.topnotchgames.frogcraft.world.item;
 
-import java.util.Dictionary;
-import java.util.Hashtable;
 import java.util.List;
 
 import javax.annotation.Nullable;
@@ -13,7 +11,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.stats.Stats;
-import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
@@ -32,47 +29,47 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class ButterflyNetItem extends Item {
-	public ButterflyNetItem(Properties p_i48487_1_) {
-		super(p_i48487_1_);
+	public ButterflyNetItem(Properties properties) {
+		super(properties);
 	}
-	public void onCraftedBy(ItemStack p_77622_1_, Level p_77622_2_, Player p_77622_3_) {
-		this.setDamage(p_77622_1_, 1);
+	public void onCraftedBy(ItemStack itemStack, Level level, Player player) {
+		this.setDamage(itemStack, 1);
 	}
 
-	public InteractionResult interactLivingEntity(ItemStack p_111207_1_, Player p_111207_2_, LivingEntity p_111207_3_, InteractionHand p_111207_4_) {
-		ItemStack itemStack = p_111207_2_.getItemInHand(p_111207_4_);
+	public InteractionResult interactLivingEntity(ItemStack itemStack, Player player, LivingEntity entity, InteractionHand hand) {
+		itemStack = player.getItemInHand(hand);
 		CompoundTag compoundTag = itemStack.getTag();
 		if (compoundTag == null) {
 			compoundTag = new CompoundTag();
 	        itemStack.setTag(compoundTag);
-	      }
-		if(compoundTag.get("frogType") == null && p_111207_4_.equals(InteractionHand.MAIN_HAND) && p_111207_3_ instanceof Frog) {
-			compoundTag.putString("frogType", p_111207_3_.getEncodeId());
-			compoundTag.put("frogData", p_111207_3_.serializeNBT());
+	    }
+		if (compoundTag.get("frogType") == null && entity instanceof Frog) {
+			compoundTag.putString("frogType", entity.getEncodeId());
+			compoundTag.put("frogData", entity.serializeNBT());
 			this.setDamage(itemStack, 0);
-			p_111207_3_.remove(Entity.RemovalReason.DISCARDED);
+			entity.remove(Entity.RemovalReason.DISCARDED);
 			return InteractionResult.SUCCESS;
 		}
 		return InteractionResult.PASS;
 	}
 	
-	public InteractionResultHolder<ItemStack> use(Level p_77659_1_, Player p_77659_2_, InteractionHand p_77659_3_) {
-	      ItemStack itemstack = p_77659_2_.getItemInHand(p_77659_3_);
-	      if (p_77659_1_.isClientSide()) {
+	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+	      ItemStack itemstack = player.getItemInHand(hand);
+	      if (level.isClientSide()) {
 	    	  return InteractionResultHolder.pass(itemstack);
 	      }
-	      BlockHitResult blockraytraceresult = getPlayerPOVHitResult(p_77659_1_, p_77659_2_, ClipContext.Fluid.SOURCE_ONLY);
+	      BlockHitResult blockraytraceresult = getPlayerPOVHitResult(level, player, ClipContext.Fluid.SOURCE_ONLY);
 	      if (blockraytraceresult.getType() != BlockHitResult.Type.BLOCK) {
 	         return InteractionResultHolder.pass(itemstack);
-	      } else if (!(p_77659_1_ instanceof ServerLevel)) {
+	      } else if (!(level instanceof ServerLevel)) {
 	         return InteractionResultHolder.success(itemstack);
 	      } else {
 	         BlockPos blockpos = blockraytraceresult.getBlockPos().offset(0, 1, 0);
 	         CompoundTag compoundTag = itemstack.getTag();
 	         if(compoundTag.get("frogType") != null) {
-		         if (p_77659_1_.mayInteract(p_77659_2_, blockpos) && p_77659_2_.mayUseItemAt(blockpos, blockraytraceresult.getDirection(), itemstack)) {
-		        	if (!(p_77659_1_.getBlockState(blockpos).getBlock() instanceof LiquidBlock)) {
-			        	Entity summonedFrog = ForgeRegistries.ENTITY_TYPES.getValue(ResourceLocation.tryParse(compoundTag.getString("frogType"))).spawn((ServerLevel)p_77659_1_, blockpos, MobSpawnType.SPAWN_EGG);
+		         if (level.mayInteract(player, blockpos) && player.mayUseItemAt(blockpos, blockraytraceresult.getDirection(), itemstack)) {
+		        	if (!(level.getBlockState(blockpos).getBlock() instanceof LiquidBlock)) {
+			        	Entity summonedFrog = ForgeRegistries.ENTITY_TYPES.getValue(ResourceLocation.tryParse(compoundTag.getString("frogType"))).spawn((ServerLevel)level, blockpos, MobSpawnType.SPAWN_EGG);
 			        	if (summonedFrog == null) {
 			               return InteractionResultHolder.pass(itemstack);
 			            } else {
@@ -83,7 +80,7 @@ public class ButterflyNetItem extends Item {
 			            	summonedFrog.moveTo(blockpos, yRot, xRot);
 			            	compoundTag.remove("frogType");
 			            	compoundTag.remove("frogData");
-			                p_77659_2_.awardStat(Stats.ITEM_USED.get(this));
+			                player.awardStat(Stats.ITEM_USED.get(this));
 			                itemstack.setDamageValue(1);
 			                return InteractionResultHolder.consume(itemstack);
 			            }
@@ -96,8 +93,8 @@ public class ButterflyNetItem extends Item {
 	   }
 	}
 	@Override
-	public void appendHoverText(ItemStack p_77624_1_, @Nullable Level p_77624_2_, List<Component> p_77624_3_, TooltipFlag p_77624_4_) {
-		super.appendHoverText(p_77624_1_, p_77624_2_, p_77624_3_, p_77624_4_);
-		p_77624_3_.add(Component.literal("item.frogcraft.butterfly_net.description").withStyle(ChatFormatting.GRAY));
+	public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
+		super.appendHoverText(itemStack, level, components, flag);
+		components.add(Component.translatable(this.getDescriptionId() + ".desc").withStyle(ChatFormatting.GRAY));
 	}
 }

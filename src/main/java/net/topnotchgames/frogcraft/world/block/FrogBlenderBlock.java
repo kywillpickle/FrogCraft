@@ -42,12 +42,15 @@ public class FrogBlenderBlock extends MachineBlock {
 	@Override
 	public InteractionResult use(BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand interactionHand, BlockHitResult blockHitResult) {
 		Optional<FrogBlenderBlockEntity> blenderEntity = level.getBlockEntity(blockPos, BlockEntities.FROG_BLENDER_BLOCK_ENTITY.get());
-		if(blenderEntity.isPresent() && interactionHand == InteractionHand.MAIN_HAND) {
-			blenderEntity.get().addFrog();
-			level.sendBlockUpdated(blockPos, blockState, blockState, UPDATE_ALL);
-			level.blockEntityChanged(blockPos);
+		if(!level.isClientSide()) {
+			if(blenderEntity.isPresent()) {
+				blenderEntity.get().addFrog();
+				level.sendBlockUpdated(blockPos, blockState, blockState, UPDATE_ALL);
+				level.blockEntityChanged(blockPos);
+			}
+			return InteractionResult.SUCCESS;
 		}
-		return InteractionResult.PASS;
+		return InteractionResult.sidedSuccess(level.isClientSide());
 	}
 	
 	@Override
