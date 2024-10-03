@@ -31,7 +31,7 @@ public class FrogBlenderRenderer implements BlockEntityRenderer<FrogBlenderBlock
 		PartDefinition root = mesh.getRoot();
 		
 		float goopHeight = blenderEntity.getGoopHeight();
-		if(goopHeight != 0.0F) root.addOrReplaceChild("goop", CubeListBuilder.create().texOffs(0, 0).addBox(0.0F, 0.0F, 0.0F, 16.0F, 2.0F+blenderEntity.getGoopHeight(), 16.0F, new CubeDeformation(-1.05F)), PartPose.offset(0.0F, 0.0F, 0.0F));
+		if(goopHeight != 0.0F) root.addOrReplaceChild("goop", CubeListBuilder.create().texOffs(0, 0).addBox(0.0F, 0.0F, 0.0F, 16.0F, 2.0F+goopHeight, 16.0F, new CubeDeformation(-1.05F)), PartPose.offset(0.0F, 0.0F, 0.0F));
 		
 		LayerDefinition layerDefinition = LayerDefinition.create(mesh, 64, 32);
 		
